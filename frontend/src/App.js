@@ -1,12 +1,21 @@
 import "./App.css";
-import StarRating from "./components/rating/starRating";
+import { useState } from "react";
+import ColorList from "./components/rating/colorList";
+import colorsData from "./models/colors.json";
 
 function App() {
+  const [colors, setColors] = useState(colorsData);
   return (
     <div className="App">
       <header className="App-header">
         <div>
-          <StarRating />
+          <ColorList
+            colors={colors}
+            onRemoveColors={(id) => {
+              const newColors = colors.filter((color) => color.id !== id);
+              setColors(newColors);
+            }}
+          />
         </div>
       </header>
     </div>
