@@ -1,14 +1,19 @@
+import { useContext } from "react";
+import { ColorContext } from "../../";
 import Color from "./color";
 
-export default function ColorList({ colors = [], onRemoveColors = (f) => f }) {
-  console.log("lenght", colors.length);
+export default function ColorList() {
+  const { colorsData: colors } = useContext(ColorContext);
+
+  console.log(colors);
+
   if (!colors.length) {
     return <div>No colors</div>;
   }
   return (
     <div>
       {colors.map((color) => (
-        <Color key={color.id} {...color} onRemove={onRemoveColors} />
+        <Color key={color.id} {...color} />
       ))}
     </div>
   );
