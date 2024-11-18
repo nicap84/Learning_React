@@ -1,10 +1,11 @@
-import { useState, createContext } from "react";
+import { createContext, useContext, useState } from "react";
 import colorData from "../models/colors.json";
 import { v4 } from "uuid";
 
 const ColorContext = createContext();
+export const useColors = () => useContext(ColorContext);
 
-export default function ColorProvider({ child }) {
+export function ColorProvider({ children }) {
   const [colors, setColors] = useState(colorData);
   const addColors = (title, color) =>
     setColors([
@@ -31,7 +32,7 @@ export default function ColorProvider({ child }) {
     <ColorContext.Provider
       value={{ colors, addColors, removeColor, rateColor }}
     >
-      <child />
+      {children}
     </ColorContext.Provider>
   );
 }
