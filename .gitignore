@@ -142,7 +142,7 @@ dist
 /coverage
 
 # production
-/build
+*/build
 
 # misc
 .DS_Store
@@ -154,3 +154,5 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+

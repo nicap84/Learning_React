@@ -1,18 +1,9 @@
 import "./App.css";
-import ColorList from "./components/rating/colorList";
-import AddColorForm from "./components/form/addColorForm";
+import React from "react";
+import VirtualizedList from "./incorporating-data/components/virtualizedList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-          <AddColorForm />
-          <ColorList />
-        </div>
-      </header>
-    </div>
-  );
+  return <VirtualizedList />;
 }
 
 export default App;
