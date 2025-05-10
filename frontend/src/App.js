@@ -1,9 +1,11 @@
 import "./App.css";
 import React from "react";
-import VirtualizedList from "./incorporating-data/components/virtualizedList";
+import { useState } from "react";
+import GitHubUser from "./incorporating-data/components/githubUser.jsx";
 
 function App() {
-  return <VirtualizedList />;
+  const [login, setLogin] = useState("moontahoe");
+  return <GitHubUser login={login} />;
 }
 
 export default App;
