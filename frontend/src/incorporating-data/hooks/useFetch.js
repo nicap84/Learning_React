@@ -4,7 +4,6 @@ export default function useFetch(uri) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  console.log("uri", uri);
 
   useEffect(() => {
     if (!uri) return;
@@ -12,7 +11,6 @@ export default function useFetch(uri) {
     const fetchData = async () => {
       try {
         const data = await fetch(uri);
-        console.log("fetchData", data);
         const json = await data.json();
         setData(json);
         setLoading(false);
