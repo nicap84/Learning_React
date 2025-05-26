@@ -1,6 +1,3 @@
-# Ok_Chef
-An amazing way to save your recipes
+# Learning React
 
-#TODO
-
-* add esLint
+Learning react through small pieces of code
